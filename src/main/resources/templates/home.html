@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4</title>
+    <script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel ="stylesheet" th:href="@{css/style.css}">
+</head>
+<body>
+<div id="app">
+    <table>
+        <tr>
+            <td>Изменение X: </td>
+            <td>
+                <multicheckbox v-model="x" v-bind:options="[-2,-1.5,-1,-0.5,0,0.5,1,1.5,2]"></multicheckbox>
+            </td>
+        </tr>
+        <tr>
+            <td>Изменение Y: </td>
+            <td>
+                <input v-model="y" type="number">
+            </td>
+        </tr>
+        <tr>
+            <td>Изменение R: </td>
+            <td>
+                <multicheckbox v-model="r" v-bind:options="[-2,-1.5,-1,-0.5,0,0.5,1,1.5,2]"></multicheckbox>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Отправить" v-on:click="submit"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" value="Перейти к начальной странице"/>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <canvas id="canvas"></canvas>
+    <table id="history_table" class="history_table">
+        <thead>
+        <tr>
+            <td>X</td>
+            <td>Y</td>
+            <td>R</td>
+            <td>Попадание</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="row in history">
+            <td v-for="value in row">{{value}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script th:src="@{js/canvas.js}"></script>
+<script th:src="@{js/home.js}"></script>
+</body>
+</html>

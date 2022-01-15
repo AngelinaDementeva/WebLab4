@@ -1,0 +1,57 @@
+input:focus {
+    outline: none;
+}
+
+.header {
+    width: 100%;
+    align-items: center;
+}
+
+.history_table {
+    table-layout: fixed;
+    width: 100%;
+    font-size: 15px;
+    border-collapse: collapse;
+}
+
+.history_table td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+tr > label {
+    font-family: "Arial", serif;
+    font-size: 12px;
+}
+
+.header td {
+    font-family: "Arial Black", serif;
+    color: black
+}
+
+label, input{display:inline-block}
+
+@media screen and (max-device-width: 642px) and (min-device-width: 2px) {
+    table, canvas, input {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        table-layout: fixed;
+    }
+    input, tr, p {
+        font-size: 40px;
+    }
+}
+
+
+@media screen and (max-device-width: 1079px) and (min-device-width: 643px) {
+    table, canvas, input {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+        table-layout: fixed;
+    }
+    input, tr, p {
+        font-size: 30px;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Lab 4</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <link rel ="stylesheet" th:href="@{css/style.css}">
+</head>
+<body>
+<table class="header">
+    <tr>
+        <td>Имя:</td>
+        <td>Ангелина</td>
+    </tr>
+    <tr>
+        <td>Фамилия:</td>
+        <td>Дементьева</td>
+    </tr>
+    <tr>
+        <td>Отчество:</td>
+        <td>Олеговна</td>
+    </tr>
+    <tr>
+        <td>Группа:</td>
+        <td>P3232</td>
+    </tr>
+    <tr>
+        <td>Вариант:</td>
+        <td>13213</td>
+    </tr>
+</table>
+<p th:if="${param.error}">Неверное имя пользователя или пароль</p>
+<p th:if="${param.register_error}" th:text="${param.register_error}"></p>
+<form th:action="@{/login}" method="post">
+    <table>
+        <tr>
+            <td>
+                <label for="username_input">Имя пользователя: </label>
+            </td>
+            <td>
+                <input id="username_input" type="text" name="username">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="password_input">Пароль: </label>
+            </td>
+            <td>
+                <input id="password_input" type="password" name="password">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input name="submit" type="submit" value="Register" formaction="/register">
+            </td>
+            <td>
+                <input name="submit" type="submit" value="Log In">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
